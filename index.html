@@ -1,0 +1,30 @@
+
+
+HTML
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜數字遊戲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>猜數字遊戲 (1-100)</h1>
+        
+        <p id="message">請輸入你的猜測數字：</p>
+        
+        <div class="input-group">
+            <input type="number" id="guessInput" min="1" max="100" placeholder="輸入數字...">
+            <button onclick="checkGuess()">猜測</button>
+        </div>
+        
+        <p id="counter">你已經猜了 0 次。</p>
+
+        <button id="resetButton" style="display: none;" onclick="resetGame()">再玩一次</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
