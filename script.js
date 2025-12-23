@@ -2,17 +2,21 @@ let answer = Math.floor(Math.random() * 100) + 1;
 let attempts = 0;
 
 function checkNumber() {
-  let guess = document.getElementById("guessInput").value;
+  const input = document.getElementById("guessInput");
+  const result = document.getElementById("result");
+  const count = document.getElementById("count");
+
+  let guess = Number(input.value);
   attempts++;
 
   if (guess > answer) {
-    document.getElementById("result").innerText = "太大了！";
+    result.textContent = "太大了！";
   } else if (guess < answer) {
-    document.getElementById("result").innerText = "太小了！";
+    result.textContent = "太小了！";
   } else {
-    document.getElementById("result").innerText = "🎉 答對了！";
+    result.textContent = "🎉 答對了！";
   }
 
-  document.getElementById("count").innerText =
-    "猜測次數：" + attempts;
+  count.textContent = "猜測次數：" + attempts;
 }
+
