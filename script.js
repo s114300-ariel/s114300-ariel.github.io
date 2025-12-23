@@ -40,4 +40,15 @@ else {
 
   count.textContent = "猜測次數：" + attempts;
 }
+function restartGame() {
+  answer = Math.floor(Math.random() * 100) + 1;
+  attempts = 0;
+
+  document.getElementById("guessInput").value = "";
+  document.getElementById("result").textContent = "遊戲已重新開始！";
+  document.getElementById("result").style.color = "black";
+  document.getElementById("count").textContent = "猜測次數：0";
+
+  document.getElementById("funnyImg").style.display = "none";
+}
 
