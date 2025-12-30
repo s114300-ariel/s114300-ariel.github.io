@@ -1,16 +1,19 @@
 body {
-  background: linear-gradient(135deg, #dff3ff, #fef6ff);
+  margin: 0;
   font-family: "Segoe UI", sans-serif;
-  text-align: center;
-}
 
-.container {
-  background: white;
-  width: 350px;
-  margin: 80px auto;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  /* 背景風格（奶茶＋巧克力） */
+  background: linear-gradient(
+    135deg,
+    #f6efe7,
+    #e9d5c3,
+    #d6b79f
+  );
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
