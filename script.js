@@ -16,17 +16,21 @@ function checkNumber() {
 
   let guess = Number(input.value);
   attempts++;
+  count.textContent = "猜測次數：" + attempts;
 
- if (guess > answer) {
-  result.textContent = "太大了！";
+let diff = Math.abs(guess - answer);
+
+if (guess > answer) {
+  result.textContent = diff > 10 ? "太大了 😵（差有點遠）" : "有點大 🤏 快接近了！";
   result.style.color = "red";
   document.getElementById("funnyImg").style.display = "none";
 }
 else if (guess < answer) {
-  result.textContent = "太小了！";
+  result.textContent = diff > 10 ? "太小了 😵（差有點遠）" : "有點小 🤏 快接近了！";
   result.style.color = "red";
   document.getElementById("funnyImg").style.display = "none";
 }
+
 else {
   let randomText = funnyTexts[Math.floor(Math.random() * funnyTexts.length)];
 
@@ -52,3 +56,12 @@ function restartGame() {
   document.getElementById("funnyImg").style.display = "none";
 }
 
+function restartGame() {
+  answer = Math.floor(Math.random() * 100) + 1;
+  attempts = 0;
+
+  document.getElementById("result").textContent = "";
+  document.getElementById("count").textContent = "";
+  document.getElementById("guessInput").value = "";
+  document.getElementById("funnyImg").style.display = "none";
+}
