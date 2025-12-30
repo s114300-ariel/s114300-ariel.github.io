@@ -6,23 +6,29 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
 
-  <h1>🎯 數字比大小遊戲</h1>
-  <p>請輸入 1 到 100 的數字</p>
+    <h1>🎯 數字比大小遊戲</h1>
+    <p>請輸入 1 到 100 的數字</p>
 
-  <input type="number" id="guessInput">
-  <button onclick="checkNumber()">猜！</button>
-<br><br>
-<button onclick="restartGame()">🔁 再玩一次</button>
+    <input type="number" id="guessInput">
+    <button onclick="checkNumber()">猜！</button>
 
-  <p id="result"></p>
-  <p id="count"></p>
-<img
-  id="funnyImg"
-  src="https://i.imgur.com/3ZQ3ZQk.png"
-  style="display:none; width:200px; margin-top:10px;"
->
+    <br><br>
+    <button onclick="restartGame()">🔄 再玩一次</button>
+
+    <p id="result"></p>
+    <p id="count"></p>
+
+    <img
+      id="funnyImg"
+      src="funny.png"
+      style="display:none; width:200px; margin-top:10px;"
+    >
+
+  </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
