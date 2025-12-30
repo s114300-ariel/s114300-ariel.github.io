@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 
-  /* 淡藍色背景（原本那個樣子） */
+  /* 淡藍背景 */
   background: linear-gradient(
     to bottom,
     #eaf4fb,
@@ -10,10 +10,10 @@ body {
   );
 
   min-height: 100vh;
-  body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: #eaf6ff;
+
+  display: flex;
+  justify-content: center;   /* 左右置中 */
+  align-items: flex-start;   /* 從上方開始 */
 }
 
 
@@ -61,4 +61,8 @@ button:hover {
 }
 .container h1 {
   color: black;
+}
+.container {
+  margin-top: 80px;   /* 控制「中間偏上」 */
+  text-align: center;
 }
