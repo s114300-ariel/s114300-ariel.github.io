@@ -63,6 +63,14 @@ button:hover {
   color: black;
 }
 .container {
-  margin-top: 80px;   /* 控制「中間偏上」 */
+  margin-top: 80px;              /* 中間偏上 */
+  background: white;             /* 白色卡片 */
+  padding: 30px 40px;
+  border-radius: 16px;
+
   text-align: center;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  min-width: 320px;
 }
