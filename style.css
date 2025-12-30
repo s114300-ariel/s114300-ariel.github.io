@@ -1,13 +1,12 @@
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
+  font-family: Arial, sans-serif;
 
-  /* 背景風格（奶茶＋巧克力） */
+  /* 淡藍色背景（原本那個樣子） */
   background: linear-gradient(
-    135deg,
-    #f6efe7,
-    #e9d5c3,
-    #d6b79f
+    to bottom,
+    #eaf4fb,
+    #f6fbff
   );
 
   min-height: 100vh;
@@ -15,6 +14,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 
 h1 {
   color: #ff6f61;
