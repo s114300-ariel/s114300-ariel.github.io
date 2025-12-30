@@ -15,9 +15,10 @@ body {
   align-items: center;
 }
 
+  h1 {
+  color: #000;
+}
 
-h1 {
-  color: #ff6f61;
 }
 
 input {
