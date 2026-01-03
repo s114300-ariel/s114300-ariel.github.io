@@ -58,4 +58,10 @@ body {
     -30px 10px 0 white;
   cursor: pointer;
 }
+/* 彩蛋雲 */
+.cloud.easter {
+  background: #ffe6f2;
+  box-shadow: 0 0 20px rgba(255, 150, 200, 0.8);
+  cursor: pointer;
+}
 
