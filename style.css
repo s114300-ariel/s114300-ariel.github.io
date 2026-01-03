@@ -1,47 +1,43 @@
 body {
-    background-color: #fff0f3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: "Microsoft JhengHei", sans-serif;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+
+  /* 天空背景 */
+  background-image: url("https://images.unsplash.com/photo-1503264116251-35a269479413");
+  background-size: cover;
+  background-position: center;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
 }
 
+/* 白色卡片 */
 .card {
-    background: white;
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 10px 25px rgba(255, 71, 126, 0.2);
-    text-align: center;
-    border: 2px solid #ffafbd;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-h1 { color: #d4145a; }
-
-input {
-    padding: 12px;
-    border: 2px solid #ffafbd;
-    border-radius: 10px;
-    width: 200px;
-    outline: none;
+/* 雲朵 */
+.cloud {
+  font-size: 80px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: transform 0.2s;
 }
 
-button {
-    background: linear-gradient(to right, #ff416c, #ff4b2b);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-left: 10px;
+.cloud:hover {
+  transform: scale(1.2);
 }
 
-#resultArea {
-    margin-top: 30px;
-    padding: 15px;
-    background-color: #fff5f7;
-    border-radius: 10px;
-    min-height: 50px;
+/* 文字 */
+#message {
+  font-size: 18px;
+  color: #333;
 }
+
