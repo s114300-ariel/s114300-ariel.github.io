@@ -1,34 +1,25 @@
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <title>數字比大小遊戲</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>AI 誇誇機</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
 
-    <h1>🎯 數字比大小遊戲</h1>
-    <p>請輸入 1 到 100 的數字</p>
+    <div class="card">
+        <h1>✨ AI 誇誇機</h1>
+        <p>告訴 AI 一件你今天做的小事：</p>
+        
+        <input type="text" id="userInput" placeholder="例如：我今天有吃早餐">
+        <button onclick="praiseMe()">求誇獎！</button>
 
-    <input type="number" id="guessInput">
-    <button onclick="checkNumber()">猜！</button>
+        <div id="resultArea">
+            <p id="praiseText">等待你的輸入...</p>
+        </div>
+    </div>
 
-    <br><br>
-    <button onclick="restartGame()">🔄 再玩一次</button>
-
-    <p id="result"></p>
-    <p id="count"></p>
-
-    <img
-      id="funnyImg"
-      src="funny.png"
-      style="display:none; width:200px; margin-top:10px;"
-    >
-
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
