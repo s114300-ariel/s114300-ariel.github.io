@@ -2,17 +2,12 @@ body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
 
-  /* 天空背景 */
-  background-image: url("https://images.unsplash.com/photo-1503264116251-35a269479413");
-  background-size: cover;
-  background-position: center;
+  /* 藍色天空 */
+  background: linear-gradient(to bottom, #87ceeb, #e0f6ff);
 
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 80px;
+  overflow: hidden;
 }
+
 
 /* 白色卡片 */
 .card {
