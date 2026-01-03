@@ -44,3 +44,24 @@ function createCloud() {
 
 // 每 1.5 秒生一朵雲
 setInterval(createCloud, 1500);
+function showMessage(text) {
+  const msg = document.createElement("div");
+  msg.innerText = text;
+
+  msg.style.position = "fixed";
+  msg.style.top = "50%";
+  msg.style.left = "50%";
+  msg.style.transform = "translate(-50%, -50%)";
+  msg.style.background = "rgba(255,255,255,0.9)";
+  msg.style.padding = "20px 30px";
+  msg.style.borderRadius = "20px";
+  msg.style.fontSize = "20px";
+  msg.style.boxShadow = "0 10px 30px rgba(0,0,0,0.2)";
+  msg.style.zIndex = "9999";
+
+  document.body.appendChild(msg);
+
+  setTimeout(() => {
+    msg.remove();
+  }, 2000);
+}
