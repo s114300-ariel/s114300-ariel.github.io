@@ -35,4 +35,16 @@ body {
   font-size: 18px;
   color: #333;
 }
+.title {
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+}
+
+/* 遊戲區 */
+#gameArea {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+}
 
