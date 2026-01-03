@@ -1,76 +1,47 @@
 body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-
-  /* 淡藍背景 */
-  background: linear-gradient(
-    to bottom,
-    #eaf4fb,
-    #f6fbff
-  );
-
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;   /* 左右置中 */
-  align-items: flex-start;   /* 從上方開始 */
+    background-color: #fff0f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Microsoft JhengHei", sans-serif;
 }
 
-
-  h1 {
-  color: #000;
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(255, 71, 126, 0.2);
+    text-align: center;
+    border: 2px solid #ffafbd;
 }
 
-}
+h1 { color: #d4145a; }
 
 input {
-  padding: 8px;
-  width: 120px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+    padding: 12px;
+    border: 2px solid #ffafbd;
+    border-radius: 10px;
+    width: 200px;
+    outline: none;
 }
 
 button {
-  padding: 8px 15px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: none;
-  background-color: #6c63ff;
-  color: white;
-  cursor: pointer;
-  margin: 5px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
 }
 
-button:hover {
-  background-color: #5548d9;
-}
-
-#result {
-  font-size: 18px;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-#count {
-  color: #555;
-  margin-top: 5px;
-}
-.title {
-  color: black;
-}
-.container h1 {
-  color: black;
-}
-.container {
-  margin-top: 80px;              /* 中間偏上 */
-  background: white;             /* 白色卡片 */
-  padding: 30px 40px;
-  border-radius: 16px;
-
-  text-align: center;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
-  min-width: 320px;
+#resultArea {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #fff5f7;
+    border-radius: 10px;
+    min-height: 50px;
 }
