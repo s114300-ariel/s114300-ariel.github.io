@@ -47,4 +47,15 @@ body {
   width: 100vw;
   height: 90vh;
 }
+.cloud {
+  position: absolute;
+  width: 100px;
+  height: 60px;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 
+    30px 10px 0 white,
+    -30px 10px 0 white;
+  cursor: pointer;
+}
 
