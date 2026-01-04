@@ -44,15 +44,19 @@ body {
 }
 .cloud {
   position: absolute;
-  width: 100px;
+  width: 120px;
   height: 60px;
   background: white;
   border-radius: 50px;
-  box-shadow: 
-    30px 10px 0 white,
-    -30px 10px 0 white;
+  top: 100px;
+
   cursor: pointer;
+  transition: transform 0.2s;
+
+  /* ⭐ 關鍵：雲會動 */
+  animation: moveCloud 20s linear infinite;
 }
+
 /* 彩蛋雲 */
 .cloud.easter {
   background: #ffe6f2;
