@@ -1,88 +1,52 @@
-body {
-  margin: 0;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #87ceeb, #e0f6ff);
-  font-family: "Segoe UI", sans-serif;
-}
-
-.title {
-  text-align: center;
-  color: white;
-  margin: 15px 0;
-  font-size: 32px;
-}
-
-/* 天空 */
-#sky {
+#gameArea {
   position: relative;
   width: 100vw;
-  height: calc(100vh - 70px);
+  height: 80vh;
+  overflow: hidden;
 }
 
-/* ☁️ 雲本體 */
+/* 雲 */
 .cloud {
   position: absolute;
-  width: 140px;
-  height: 70px;
-  background: white;
-  border-radius: 50px;
-  cursor: pointer;
+  left: -150px;
+  font-size: 80px;
   animation: moveCloud linear infinite;
-}
-
-/* 雲的三個圓 */
-.cloud::before,
-.cloud::after {
-  content: "";
-  position: absolute;
-  background: white;
-  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .cloud::before {
-  width: 60px;
-  height: 60px;
-  top: -30px;
-  left: 20px;
+  content: "☁️";
 }
 
-.cloud::after {
-  width: 80px;
-  height: 80px;
-  top: -40px;
-  right: 20px;
+/* 鼓勵雲（顏色不同） */
+.good-cloud {
+  color: pink;
 }
 
-/* 🎁 鼓勵雲（顏色不同） */
-.cloud.easter {
-  background: #ffd6e8;
-}
-
-.cloud.easter::before,
-.cloud.easter::after {
-  background: #ffd6e8;
-}
-
-/* 雲移動 */
-@keyframes moveCloud {
-  from {
-    left: -160px;
-  }
-  to {
-    left: 100vw;
-  }
-}
-/* 💬 鼓勵文字 */
+/* 鼓勵文字 */
 .message {
   position: absolute;
   color: white;
   font-size: 18px;
   font-weight: bold;
-  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  z-index: 10;
   animation: floatUp 2s ease-out forwards;
   pointer-events: none;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
+/* 雲移動 */
+@keyframes moveCloud {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(120vw);
+  }
+}
+
+/* 字往上飄 */
 @keyframes floatUp {
   from {
     opacity: 1;
@@ -90,6 +54,7 @@ body {
   }
   to {
     opacity: 0;
-    transform: translateY(-40px);
+    transform: translateY(-30px);
   }
 }
+
