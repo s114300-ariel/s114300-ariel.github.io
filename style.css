@@ -19,12 +19,7 @@ body {
 }
 
 /* 雲朵 */
-.cloud {
-  font-size: 80px;
-  cursor: pointer;
-  margin: 20px 0;
-  transition: transform 0.2s;
-}
+
 
 .cloud:hover {
   transform: scale(1.2);
