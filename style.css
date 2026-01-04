@@ -1,43 +1,29 @@
 body {
   margin: 0;
-  background: linear-gradient(#9dd9f3, #dff4ff);
-  font-family: sans-serif;
-  overflow: hidden;
-}
-
-.title {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(#cceeff, #99ddaa);
   text-align: center;
-  color: white;
-  margin: 20px 0;
 }
 
-#gameArea {
-  position: relative;
+h1 {
+  margin-top: 20px;
+}
+
+p {
+  color: #333;
+}
+
+/* 草地 */
+#field {
   width: 100vw;
   height: 80vh;
-  overflow: hidden;
-}
-
-/* 一般雲 */
-.cloud {
-  position: absolute;
-  left: -150px;
-  font-size: 80px;
-  animation: moveCloud linear infinite;
+  position: relative;
   cursor: pointer;
 }
 
-/* 彩蛋雲 */
-.easter {
-  color: pink;
-}
-
-/* 雲移動 */
-@keyframes moveCloud {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(120vw);
-  }
+/* 小草 */
+.grass {
+  position: absolute;
+  font-size: 24px;
+  user-select: none;
 }
