@@ -1,92 +1,47 @@
-/* 整個畫面 */
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(to bottom, #87ceeb, #e0f6ff);
   overflow: hidden;
+  background: linear-gradient(#87ceeb, #e0f6ff);
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* 標題 */
 .title {
   text-align: center;
   color: white;
   margin: 10px 0;
 }
 
-/* 遊戲區 */
-#gameArea {
+/* 天空 */
+#sky {
   position: relative;
   width: 100vw;
   height: 90vh;
 }
 
-/* 雲朵 */
+/* ☁️ 雲 */
 .cloud {
   position: absolute;
-  width: 120px;
-  height: 40px;
+  width: 140px;
+  height: 70px;
   background: white;
-  border-radius: 20px;
+  border-radius: 50px;
   cursor: pointer;
   animation: moveCloud linear infinite;
 }
 
-/* 左邊小雲 */
-.cloud::before {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background: white;
-  border-radius: 50%;
-  top: -25px;
-  left: 10px;
+/* 彩蛋雲（顏色不一樣） */
+.cloud.easter {
+  background: #ffd6e8;
+  box-shadow: 0 0 10px pink;
 }
 
-/* 右邊大雲 */
-.cloud::after {
-  content: "";
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  background: white;
-  border-radius: 50%;
-  top: -35px;
-  right: 10px;
-}
-
-/* 雲朵移動動畫 */
+/* 雲跑起來 */
 @keyframes moveCloud {
   from {
-    left: 100vw;
+    left: -160px;
   }
   to {
-    left: -150px;
+    left: 100vw;
   }
 }
-#message {
-  position: fixed;
-  bottom: 30px;
-  width: 100%;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  pointer-events: none;
-}
-cloud.addEventListener("click", () => {
-  // 30% 機率出現鼓勵的話
-  if (Math.random() < 0.3) {
-    const msg = messages[Math.floor(Math.random() * messages.length)];
-    const messageBox = document.getElementById("message");
-    messageBox.textContent = msg;
 
-    // 2 秒後消失
-    setTimeout(() => {
-      messageBox.textContent = "";
-    }, 2000);
-  }
-
-  cloud.remove();
-});
