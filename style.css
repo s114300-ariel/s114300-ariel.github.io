@@ -1,24 +1,25 @@
 body {
   margin: 0;
   overflow: hidden;
-  background: linear-gradient(#87ceeb, #e0f6ff);
+  background: linear-gradient(to bottom, #87ceeb, #e0f6ff);
   font-family: "Segoe UI", sans-serif;
 }
 
 .title {
   text-align: center;
   color: white;
-  margin: 10px 0;
+  margin: 15px 0;
+  font-size: 32px;
 }
 
 /* 天空 */
 #sky {
   position: relative;
   width: 100vw;
-  height: 90vh;
+  height: calc(100vh - 70px);
 }
 
-/* ☁️ 雲 */
+/* ☁️ 雲本體 */
 .cloud {
   position: absolute;
   width: 140px;
@@ -29,13 +30,40 @@ body {
   animation: moveCloud linear infinite;
 }
 
-/* 彩蛋雲（顏色不一樣） */
-.cloud.easter {
-  background: #ffd6e8;
-  box-shadow: 0 0 10px pink;
+/* 雲的三個圓 */
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: white;
+  border-radius: 50%;
 }
 
-/* 雲跑起來 */
+.cloud::before {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: 20px;
+}
+
+.cloud::after {
+  width: 80px;
+  height: 80px;
+  top: -40px;
+  right: 20px;
+}
+
+/* 🎁 鼓勵雲（顏色不同） */
+.cloud.easter {
+  background: #ffd6e8;
+}
+
+.cloud.easter::before,
+.cloud.easter::after {
+  background: #ffd6e8;
+}
+
+/* 雲移動 */
 @keyframes moveCloud {
   from {
     left: -160px;
@@ -44,4 +72,3 @@ body {
     left: 100vw;
   }
 }
-
