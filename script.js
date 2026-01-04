@@ -7,6 +7,8 @@ const messages = [
 ];
 
 const gameArea = document.getElementById("gameArea");
+console.log("JS 有跑"); // ←一定要有這行
+
 
 function createCloud() {
   const cloud = document.createElement("div");
