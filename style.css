@@ -1,21 +1,16 @@
-/* 全頁背景 */
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(to bottom, #87ceeb, #e0f6ff);
+  background: linear-gradient(#9dd9f3, #dff4ff);
+  font-family: sans-serif;
   overflow: hidden;
 }
 
-/* 標題 */
 .title {
   text-align: center;
   color: white;
-  font-size: 48px;
   margin: 20px 0;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-/* 遊戲區 */
 #gameArea {
   position: relative;
   width: 100vw;
@@ -23,58 +18,26 @@ body {
   overflow: hidden;
 }
 
-/* 雲本體 */
+/* 一般雲 */
 .cloud {
   position: absolute;
   left: -150px;
   font-size: 80px;
+  animation: moveCloud linear infinite;
   cursor: pointer;
-  animation-name: moveCloud;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  z-index: 1;
 }
 
-/* 雲的圖案 */
-.cloud::before {
-  content: "☁️";
-}
-
-/* 會出現鼓勵文字的雲（顏色不同） */
-.good-cloud {
+/* 彩蛋雲 */
+.easter {
   color: pink;
 }
 
-/* 鼓勵文字（出現在雲後面） */
-.message {
-  position: absolute;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  pointer-events: none;
-  animation: floatUp 2s ease-out forwards;
-  text-shadow: 0 0 5px rgba(0,0,0,0.4);
-  z-index: 10;
-}
-
-/* 雲從左跑到右 */
+/* 雲移動 */
 @keyframes moveCloud {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(120vw);
-  }
-}
-
-/* 文字往上飄 */
-@keyframes floatUp {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-30px);
   }
 }
