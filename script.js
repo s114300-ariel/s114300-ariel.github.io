@@ -10,8 +10,14 @@ const gameArea = document.getElementById("gameArea");
 
 // 產生雲朵
 function createCloud() {
-  const cloud = document.createElement("div");
-  cloud.className = "cloud";
+const cloud = document.createElement("div");
+cloud.classList.add("cloud");
+
+// 30% 機率是鼓勵雲
+const isGoodCloud = Math.random() < 0.3;
+if (isGoodCloud) {
+  cloud.classList.add("good");
+}
 
   // 隨機高度
   const top = Math.random() * 400 + 50;
