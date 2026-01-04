@@ -72,3 +72,24 @@ body {
     left: 100vw;
   }
 }
+/* 💬 鼓勵文字 */
+.message {
+  position: absolute;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  animation: floatUp 2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
