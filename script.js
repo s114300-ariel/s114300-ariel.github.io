@@ -1,55 +1,30 @@
-const gameArea = document.getElementById("gameArea");
+const sky = document.getElementById("sky");
 
-// 每 1.2 秒生一顆氣球
-setInterval(createBalloon, 1200);
+// 建立雲朵
+function createCloud() {
+  const cloud = document.createElement("div");
+  cloud.classList.add("cloud");
 
-function createBalloon() {
-  const balloon = document.createElement("div");
-  balloon.classList.add("balloon");
+  // 隨機高度
+  cloud.style.top = Math.random() * 300 + "px";
 
-  // ⭐ 20% 機率是特別氣球
-  const isSpecial = Math.random() < 0.2;
-  if (isSpecial) {
-    balloon.classList.add("special");
+  // 20% 機率生成粉紅色雲
+  if (Math.random() < 0.2) {
+    cloud.classList.add("pink");
   }
 
-  // 隨機左右位置
-  const left = Math.random() * 90;
-  balloon.style.left = left + "vw";
-
-  // 隨機速度
-  const duration = Math.random() * 5 + 6;
-  balloon.style.animationDuration = duration + "s";
-
-  // 點擊氣球
-  balloon.addEventListener("click", () => {
-    if (isSpecial) {
-      showMessage(balloon.offsetLeft, balloon.offsetTop);
-    }
-    balloon.remove();
+  // 點擊雲朵後消失
+  cloud.addEventListener("click", function () {
+    cloud.remove();
   });
 
-  gameArea.appendChild(balloon);
+  sky.appendChild(cloud);
 
-  // 飄出畫面後自動清除
+  // 雲朵飄完後自動移除
   setTimeout(() => {
-    balloon.remove();
-  }, duration * 1000);
+    cloud.remove();
+  }, 10000);
 }
 
-function showMessage(x, y) {
-  const msg = document.createElement("div");
-  msg.classList.add("message");
-
-  const texts = ["你很棒！", "做得好！", "繼續加油 💪"];
-  msg.textContent = texts[Math.floor(Math.random() * texts.length)];
-
-  msg.style.left = x + "px";
-  msg.style.top = y + "px";
-
-  gameArea.appendChild(msg);
-
-  setTimeout(() => {
-    msg.remove();
-  }, 2000);
-}
+// 每 1.5 秒生成一朵雲
+setInterval(createCloud, 1500);
