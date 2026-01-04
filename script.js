@@ -1,59 +1,43 @@
+const sky = document.getElementById("sky");
+
 const messages = [
-  "你做得很好 💪",
-  "慢慢來也沒關係 🌈",
-  "你已經很努力了 ☁️",
-  "今天的你很棒 ✨",
-  "別急，一步一步來 🤍"
+  "你很棒 🌟",
+  "慢慢來就好 ☁️",
+  "今天的你已經很努力了 💙",
+  "沒關係，休息一下也可以 😊"
 ];
 
-const gameArea = document.getElementById("gameArea");
-
-// 產生雲朵
 function createCloud() {
-const cloud = document.createElement("div");
-cloud.classList.add("cloud");
-
-// 30% 機率是鼓勵雲
-const isGoodCloud = Math.random() < 0.3;
-if (isGoodCloud) {
-  cloud.classList.add("good");
-}
+  const cloud = document.createElement("div");
+  cloud.classList.add("cloud");
 
   // 隨機高度
-  const top = Math.random() * 400 + 50;
-  cloud.style.top = top + "px";
+  cloud.style.top = Math.random() * 70 + "vh";
 
   // 隨機速度
-  const speed = Math.random() * 5 + 5;
-  cloud.style.animationDuration = speed + "s";
+  const duration = Math.random() * 10 + 15;
+  cloud.style.animationDuration = duration + "s";
 
-cloud.addEventListener("click", () => {
-  if (cloud.classList.contains("good")) {
-    const msg = messages[Math.floor(Math.random() * messages.length)];
-    const messageBox = document.getElementById("message");
-    messageBox.textContent = msg;
-
-    setTimeout(() => {
-      messageBox.textContent = "";
-    }, 2000);
+  // 🎁 20% 機率是彩蛋雲
+  const isEaster = Math.random() < 0.2;
+  if (isEaster) {
+    cloud.classList.add("easter");
   }
 
-  cloud.remove();
-});
+  cloud.onclick = () => {
+    if (isEaster) {
+      alert(messages[Math.floor(Math.random() * messages.length)]);
+    }
+    cloud.remove();
+  };
 
+  sky.appendChild(cloud);
 
-  cloud.remove();
-});
-
-
-  gameArea.appendChild(cloud);
-
-  // 雲跑完自動移除
+  // 跑完自動消失
   setTimeout(() => {
     cloud.remove();
-  }, speed * 1000);
+  }, duration * 1000);
 }
 
-// 每 1 秒生一朵雲
-setInterval(createCloud, 1000);
-
+// 每 1.5 秒生一朵雲
+setInterval(createCloud, 1500);
