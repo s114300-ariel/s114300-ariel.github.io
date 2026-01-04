@@ -16,19 +16,44 @@ h1 {
   overflow: hidden;
 }
 
-/* 雲朵 */
+/* ☁️ 雲朵主體 */
 .cloud {
   position: absolute;
   width: 120px;
-  height: 60px;
+  height: 50px;
   background-color: white;
   border-radius: 50px;
   cursor: pointer;
   animation: moveCloud 10s linear forwards;
 }
 
-/* 粉紅色雲 */
-.pink {
+/* 雲朵的左右小圓（做出雲形） */
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 15px;
+}
+
+.cloud::after {
+  width: 70px;
+  height: 70px;
+  top: -35px;
+  right: 15px;
+}
+
+/* 🌸 粉紅雲（整朵一起變色） */
+.pink,
+.pink::before,
+.pink::after {
   background-color: #f8bbd0;
 }
 
