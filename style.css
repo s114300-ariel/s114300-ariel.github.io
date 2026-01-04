@@ -1,39 +1,16 @@
+/* 整個畫面 */
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-
-  /* 藍色天空 */
   background: linear-gradient(to bottom, #87ceeb, #e0f6ff);
-
   overflow: hidden;
 }
 
-
-/* 白色卡片 */
-.card {
-  background: white;
-  padding: 30px 40px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* 雲朵 */
-
-
-.cloud:hover {
-  transform: scale(1.2);
-}
-
-/* 文字 */
-#message {
-  font-size: 18px;
-  color: #333;
-}
+/* 標題 */
 .title {
   text-align: center;
   color: white;
-  margin-top: 20px;
+  margin: 10px 0;
 }
 
 /* 遊戲區 */
@@ -42,33 +19,24 @@ body {
   width: 100vw;
   height: 90vh;
 }
+
+/* 雲朵 */
 .cloud {
   position: absolute;
   width: 120px;
   height: 60px;
   background: white;
   border-radius: 50px;
-  top: 100px;
-
   cursor: pointer;
-  transition: transform 0.2s;
-
-  /* ⭐ 關鍵：雲會動 */
-  animation: moveCloud 20s linear infinite;
+  animation: moveCloud linear infinite;
 }
 
-/* 彩蛋雲 */
-.cloud.easter {
-  background: #ffe6f2;
-  box-shadow: 0 0 20px rgba(255, 150, 200, 0.8);
-  cursor: pointer;
-}
+/* 雲朵移動動畫 */
 @keyframes moveCloud {
   from {
-    left: -150px;
-  }
-  to {
     left: 100vw;
   }
+  to {
+    left: -150px;
+  }
 }
-
