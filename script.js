@@ -65,3 +65,22 @@ function showMessage(text) {
     msg.remove();
   }, 2000);
 }
+const gameArea = document.getElementById("gameArea");
+
+function createCloud() {
+  const cloud = document.createElement("div");
+  cloud.className = "cloud";
+
+  // 隨機高度
+  cloud.style.top = Math.random() * 300 + 50 + "px";
+
+  gameArea.appendChild(cloud);
+
+  // 20 秒後刪掉雲（避免越來越多）
+  setTimeout(() => {
+    cloud.remove();
+  }, 20000);
+}
+
+// 每 2 秒產生一朵雲
+setInterval(createCloud, 2000);
