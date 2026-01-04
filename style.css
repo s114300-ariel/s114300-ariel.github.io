@@ -22,18 +22,33 @@ p {
   overflow: hidden;
 }
 
-/* 氣球 */
+/* 🎈 氣球本體 */
 .balloon {
   position: absolute;
-  bottom: -80px;
-  font-size: 50px;
+  bottom: -100px;
+  width: 50px;
+  height: 65px;
+  background: red;
+  border-radius: 50% 50% 45% 45%;
   cursor: pointer;
   animation: floatUp linear forwards;
 }
 
-/* 特別氣球（顏色不同） */
+/* 氣球線 */
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  width: 2px;
+  height: 25px;
+  background: #666;
+  transform: translateX(-50%);
+}
+
+/* ⭐ 特別氣球（顏色明顯不同） */
 .special {
-  filter: hue-rotate(120deg);
+  background: gold;
 }
 
 /* 鼓勵文字 */
@@ -45,17 +60,17 @@ p {
   pointer-events: none;
 }
 
-/* 氣球往上飄 */
+/* 氣球往上 */
 @keyframes floatUp {
   from {
     transform: translateY(0);
   }
   to {
-    transform: translateY(-110vh);
+    transform: translateY(-120vh);
   }
 }
 
-/* 文字往上淡出 */
+/* 文字淡出 */
 @keyframes fadeUp {
   from {
     opacity: 1;
