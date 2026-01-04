@@ -1,29 +1,68 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(#cceeff, #99ddaa);
+  background: linear-gradient(#87ceeb, #ffffff);
   text-align: center;
+  overflow: hidden;
 }
 
 h1 {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 p {
   color: #333;
 }
 
-/* 草地 */
-#field {
+/* 遊戲區 */
+#gameArea {
+  position: relative;
   width: 100vw;
   height: 80vh;
-  position: relative;
-  cursor: pointer;
+  overflow: hidden;
 }
 
-/* 小草 */
-.grass {
+/* 氣球 */
+.balloon {
   position: absolute;
-  font-size: 24px;
-  user-select: none;
+  bottom: -80px;
+  font-size: 50px;
+  cursor: pointer;
+  animation: floatUp linear forwards;
+}
+
+/* 特別氣球（顏色不同） */
+.special {
+  filter: hue-rotate(120deg);
+}
+
+/* 鼓勵文字 */
+.message {
+  position: absolute;
+  color: #ff4081;
+  font-weight: bold;
+  animation: fadeUp 2s forwards;
+  pointer-events: none;
+}
+
+/* 氣球往上飄 */
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-110vh);
+  }
+}
+
+/* 文字往上淡出 */
+@keyframes fadeUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
 }
