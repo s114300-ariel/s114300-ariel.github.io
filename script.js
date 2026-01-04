@@ -1,12 +1,17 @@
 const gameArea = document.getElementById("gameArea");
 
-// 每 1.2 秒產生一顆氣球
+// 每 1.2 秒生一顆氣球
 setInterval(createBalloon, 1200);
 
 function createBalloon() {
   const balloon = document.createElement("div");
   balloon.classList.add("balloon");
-  balloon.textContent = "🎈";
+
+  // ⭐ 20% 機率是特別氣球
+  const isSpecial = Math.random() < 0.2;
+  if (isSpecial) {
+    balloon.classList.add("special");
+  }
 
   // 隨機左右位置
   const left = Math.random() * 90;
@@ -15,12 +20,6 @@ function createBalloon() {
   // 隨機速度
   const duration = Math.random() * 5 + 6;
   balloon.style.animationDuration = duration + "s";
-
-  // ⭐ 20% 機率是特別氣球
-  const isSpecial = Math.random() < 0.2;
-  if (isSpecial) {
-    balloon.classList.add("special");
-  }
 
   // 點擊氣球
   balloon.addEventListener("click", () => {
@@ -32,18 +31,17 @@ function createBalloon() {
 
   gameArea.appendChild(balloon);
 
-  // 飄出畫面後自動清掉
+  // 飄出畫面後自動清除
   setTimeout(() => {
     balloon.remove();
   }, duration * 1000);
 }
 
-// 顯示鼓勵文字
 function showMessage(x, y) {
   const msg = document.createElement("div");
   msg.classList.add("message");
 
-  const texts = ["你很棒！", "繼續加油 💪", "做得好！", "太厲害了！"];
+  const texts = ["你很棒！", "做得好！", "繼續加油 💪"];
   msg.textContent = texts[Math.floor(Math.random() * texts.length)];
 
   msg.style.left = x + "px";
