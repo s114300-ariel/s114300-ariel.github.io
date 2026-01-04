@@ -1,48 +1,69 @@
 const gameArea = document.getElementById("gameArea");
 
+// 鼓勵文字清單
 const messages = [
-  "你已經很棒了 🤍",
+  "你很棒 🌟",
   "慢慢來沒關係 ☁️",
-  "休息一下也可以 😊",
-  "你正在前進中 ✨"
+  "已經很努力了 💙",
+  "休息一下也很好 🍃",
+  "你值得被肯定 🤍"
 ];
 
+// 產生雲
 function createCloud() {
   const cloud = document.createElement("div");
-  cloud.className = "cloud";
+  cloud.classList.add("cloud");
 
-  // 隨機決定是不是「鼓勵雲」
-  const isGoodCloud = Math.random() < 0.3;
-  if (isGoodCloud) {
+  // 30% 機率是「鼓勵雲」
+  const isGood = Math.random() < 0.3;
+  if (isGood) {
     cloud.classList.add("good-cloud");
   }
 
-  cloud.style.top = Math.random() * 300 + "px";
-  cloud.style.animationDuration = 15 + Math.random() * 10 + "s";
+  // 隨機高度
+  cloud.style.top = Math.random() * 60 + "vh";
 
+  // 隨機速度
+  const duration = Math.random() * 10 + 15;
+  cloud.style.animationDuration = duration + "s";
+
+  // 點擊事件
   cloud.addEventListener("click", () => {
-    if (isGoodCloud) {
+    if (isGood) {
       showMessage(cloud);
     }
   });
 
   gameArea.appendChild(cloud);
 
-  setTimeout(() => cloud.remove(), 25000);
+  // 動畫結束後移除
+  setTimeout(() => {
+    cloud.remove();
+  }, duration * 1000);
 }
 
+// 顯示鼓勵文字（在雲後面，不跳視窗）
 function showMessage(cloud) {
   const msg = document.createElement("div");
-  msg.className = "message";
-  msg.innerText = messages[Math.floor(Math.random() * messages.length)];
+  msg.classList.add("message");
 
+  // 隨機一句鼓勵的話
+  msg.textContent = messages[Math.floor(Math.random() * messages.length)];
+
+  // 文字位置 = 雲的位置
   const rect = cloud.getBoundingClientRect();
-  msg.style.left = rect.left + "px";
-  msg.style.top = rect.top - 30 + "px";
+  const gameRect = gameArea.getBoundingClientRect();
 
-  document.body.appendChild(msg);
+  msg.style.left = rect.left - gameRect.left + 40 + "px";
+  msg.style.top = rect.top - gameRect.top + "px";
 
-  setTimeout(() => msg.remove(), 2000);
+  gameArea.appendChild(msg);
+
+  // 2 秒後移除文字
+  setTimeout(() => {
+    msg.remove();
+  }, 2000);
 }
 
+// 每 2 秒產生一朵雲
 setInterval(createCloud, 2000);
