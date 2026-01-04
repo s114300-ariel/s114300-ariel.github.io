@@ -28,17 +28,19 @@ if (isGoodCloud) {
   cloud.style.animationDuration = speed + "s";
 
 cloud.addEventListener("click", () => {
-  // 30% 機率出現鼓勵的話
-  if (Math.random() < 0.3) {
+  if (cloud.classList.contains("good")) {
     const msg = messages[Math.floor(Math.random() * messages.length)];
     const messageBox = document.getElementById("message");
     messageBox.textContent = msg;
 
-    // 2 秒後消失
     setTimeout(() => {
       messageBox.textContent = "";
     }, 2000);
   }
+
+  cloud.remove();
+});
+
 
   cloud.remove();
 });
