@@ -1,14 +1,4 @@
-const messages = [
-  "你很棒 💖",
-  "今天也辛苦了 ☁️",
-  "慢慢來沒關係 🌱",
-  "你值得休息一下 😌"
-  "加油！你可以的 🌈"
-];
-
 const gameArea = document.getElementById("gameArea");
-console.log("JS 有跑"); // ←一定要有這行
-
 
 function createCloud() {
   const cloud = document.createElement("div");
@@ -46,43 +36,3 @@ function createCloud() {
 
 // 每 1.5 秒生一朵雲
 setInterval(createCloud, 1500);
-function showMessage(text) {
-  const msg = document.createElement("div");
-  msg.innerText = text;
-
-  msg.style.position = "fixed";
-  msg.style.top = "50%";
-  msg.style.left = "50%";
-  msg.style.transform = "translate(-50%, -50%)";
-  msg.style.background = "rgba(255,255,255,0.9)";
-  msg.style.padding = "20px 30px";
-  msg.style.borderRadius = "20px";
-  msg.style.fontSize = "20px";
-  msg.style.boxShadow = "0 10px 30px rgba(0,0,0,0.2)";
-  msg.style.zIndex = "9999";
-
-  document.body.appendChild(msg);
-
-  setTimeout(() => {
-    msg.remove();
-  }, 2000);
-}
-const gameArea = document.getElementById("gameArea");
-
-function createCloud() {
-  const cloud = document.createElement("div");
-  cloud.className = "cloud";
-
-  // 隨機高度
-  cloud.style.top = Math.random() * 300 + 50 + "px";
-
-  gameArea.appendChild(cloud);
-
-  // 20 秒後刪掉雲（避免越來越多）
-  setTimeout(() => {
-    cloud.remove();
-  }, 20000);
-}
-
-// 每 2 秒產生一朵雲
-setInterval(createCloud, 2000);
