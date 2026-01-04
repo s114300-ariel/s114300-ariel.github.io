@@ -1,13 +1,18 @@
 const field = document.getElementById("field");
 
 field.addEventListener("click", function (e) {
-  const grass = document.createElement("div");
-  grass.classList.add("grass");
-  grass.textContent = "🌱";
+  const plant = document.createElement("div");
+  plant.classList.add("grass");
 
-  // 取得點擊位置
-  grass.style.left = e.clientX + "px";
-  grass.style.top = e.clientY + "px";
+  // ⭐ 20% 機率長花，其餘是草
+  if (Math.random() < 0.2) {
+    plant.textContent = "🌸";
+  } else {
+    plant.textContent = "🌱";
+  }
 
-  field.appendChild(grass);
+  plant.style.left = e.clientX + "px";
+  plant.style.top = e.clientY + "px";
+
+  field.appendChild(plant);
 });
